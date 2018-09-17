@@ -1,9 +1,15 @@
 module Main where
 
 import Prelude
-import Effect (Effect)
+
+import Data.AddressBook (Address, showAddress, showEntry)
+import Effect
 import Effect.Console (log)
+import Math (sqrt, pi)
 
 main :: Effect Unit
 main = do
-  log "Hello sailor!"
+  let home = { street: "6 Highfield Green", city: "Epping", state: "UK" }
+  let me = {firstName: "Waldemar", lastName: "Schwan", address: home}
+  log (showEntry me)
+  log (show  "OK!")
